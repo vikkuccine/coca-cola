@@ -25,5 +25,8 @@
     "gulp-uglify-es": "^3.0.0",
     "gulp-webp": "^4.0.1",
     "sass": "^1.65.1"
+  },
+  "dependencies": {
+    "pure-snow.js": "^2.1.0"
   }
 }

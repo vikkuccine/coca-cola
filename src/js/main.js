@@ -1,0 +1,2 @@
+generateSnow();
+showSnow(true);

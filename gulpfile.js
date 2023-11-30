@@ -15,34 +15,34 @@ const ttf2woff2 = require('gulp-ttf2woff2');
 const include = require('gulp-include');
 
 function pages() {
-    return src('app/pages/*.html')
+    return src('src/pages/*.html')
     .pipe(include({
-        includePaths: 'app/components'
+        includePaths: 'src/components'
     }))
     .pipe(dest('app'))
     .pipe(browserSync.stream())
 }
 
 function fonts() {
-    return src('app/fonts/src/*.*')
+    return src('src/fonts/*.*')
     .pipe(fonter({
         formats: ['woff', 'ttf']
     }))
-    .pipe(src('app/fonts/*.ttf'))
+    .pipe(src('src/fonts/*.ttf'))
     .pipe(ttf2woff2())
     .pipe(dest('app/fonts'))
 }
 
 function images() {
-    return src(['app/images/src/*.*'])
+    return src(['src/images/*.*'])
     .pipe(newer('app/images'))
     .pipe(avif({guality: 50}))
 
-    .pipe(src('app/images/src/*.*'))
+    .pipe(src('src/images/*.*'))
     .pipe(newer('app/images'))
     .pipe(webp())
 
-    .pipe(src('app/images/src/*.*'))
+    .pipe(src('src/images/*.*'))
     .pipe(newer('app/images'))
     .pipe(imagemin())
     .pipe(dest('app/images'))
@@ -50,7 +50,8 @@ function images() {
 
 function scripts() {
     return src([
-        'app/js/main.js'
+        'node_modules/pure-snow.js/pure-snow.js',
+        'src/js/main.js'
     ])
     .pipe(concat('main.min.js'))
     // .pipe(uglify())
@@ -59,7 +60,7 @@ function scripts() {
 }
 
 function styles() {
-    return src('app/scss/style.scss')
+    return src('src/scss/style.scss')
     .pipe(autoprefixer({overrideBrowserslist: ['last 10 version']}))
     .pipe(concat('style.min.css'))
     .pipe(scss({outputStyle: 'compressed'}))
@@ -73,10 +74,10 @@ function watching() {
             baseDir: "app/"
         }
     });
-    watch(['app/scss/**/*.scss'], styles)
-    watch(['app/images/src'], images)
-    watch(['app/js/main.js'], scripts)
-    watch(['app/components/*', 'app/pages/*'], pages)
+    watch(['src/scss/**/*.scss'], styles)
+    watch(['src/images'], images)
+    watch(['src/js/main.js'], scripts)
+    watch(['src/components/*', 'src/pages/*'], pages)
     watch(['app/*.html']).on('change', browserSync.reload)
 }
 
