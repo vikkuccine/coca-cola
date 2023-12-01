@@ -1,0 +1,9 @@
+@media (min-width: 1340px) {
+    .menu__wrap {
+        clip-path: circle(15px at calc(((100vw - 1329px) / 2) + 1286px) 7%);
+
+        &--open {
+            clip-path: circle(1200px at 90% -20%);
+        }
+    }
+}

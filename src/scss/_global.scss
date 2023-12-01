@@ -20,6 +20,7 @@ body {
 	line-height: 1.2;
 	color: #fff;
 	overflow-x: hidden;
+	position: relative;
 }
 
 .overflow-hidden {
@@ -55,6 +56,7 @@ a {
 
 .main {
 	flex: 1 0 auto;
+	height: 10px;
 }
 
 .footer {
@@ -66,4 +68,5 @@ a {
 	font-size: 52px;
 	color: #fff;
 }
+
 
