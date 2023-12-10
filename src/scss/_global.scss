@@ -8,11 +8,6 @@ html {
   box-sizing: inherit;
 }
 
-html,
-body {
-	height: 100%;
-}
-
 body {
 	font-family: 'Roboto', sans-serif;
 	font-size: 28px;
@@ -21,6 +16,7 @@ body {
 	color: #fff;
 	overflow-x: hidden;
 	position: relative;
+	overflow-y: auto;
 }
 
 .overflow-hidden {
@@ -51,12 +47,11 @@ a {
 	flex-direction: column;
 	min-height: 100%;
 	// position: relative;
-	overflow-x: hidden;
+	overflow: hidden;
 }
 
 .main {
 	flex: 1 0 auto;
-	height: 10px;
 }
 
 .footer {

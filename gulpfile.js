@@ -50,7 +50,9 @@ function images() {
 
 function scripts() {
     return src([
+        'node_modules/choices.js/public/assets/scripts/choices.min.js',
         'node_modules/pure-snow.js/pure-snow.js',
+        'node_modules/swiper/swiper-bundle.min.js',
         'src/js/main.js'
     ])
     .pipe(concat('main.min.js'))
