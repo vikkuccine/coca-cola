@@ -1,5 +1,5 @@
-generateSnow();
-showSnow(true);
+// generateSnow();
+// showSnow(true);
 
 
 const burgerMenu = document.querySelector('.burger-menu');
