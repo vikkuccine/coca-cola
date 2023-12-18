@@ -44,6 +44,12 @@
     }
 }
 
+@media (min-width: 1000px) {
+    .first-screen__title {
+        padding-top: 30vh;
+    }
+}
+
 
 @media (min-width: 1060px) {
     .presents__inner {
@@ -79,7 +85,7 @@
 
     .presents {
         &::before {
-            background-size: 110%;
+            // background-size: 110%;
         }
     }
 
