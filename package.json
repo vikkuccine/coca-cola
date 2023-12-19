@@ -28,6 +28,7 @@
   },
   "dependencies": {
     "choices.js": "^10.2.0",
+    "fullpage.js": "^4.0.20",
     "pure-snow.js": "^2.1.0",
     "swiper": "^11.0.5"
   }

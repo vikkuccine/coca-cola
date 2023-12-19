@@ -53,6 +53,7 @@ function scripts() {
         'node_modules/choices.js/public/assets/scripts/choices.min.js',
         'node_modules/pure-snow.js/pure-snow.js',
         'node_modules/swiper/swiper-bundle.min.js',
+        'node_modules/fullpage.js/dist/fullpage.min.js',
         'src/js/main.js'
     ])
     .pipe(concat('main.min.js'))
