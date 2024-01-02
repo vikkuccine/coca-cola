@@ -9,6 +9,7 @@
     position: relative;
     scroll-snap-align: start;
 
+
     &::before {
         content: '';
         position: absolute;
@@ -24,7 +25,7 @@
     }
 
     &__body {
-      margin-top: -90px;
+        margin-top: -90px;
     }
 
     &__title {
@@ -59,18 +60,22 @@
 
     &__arrow {
         display: none;
-        animation: arrowmove 4s linear none infinite alternate none;
+        animation: arrowmove 1s linear 0s infinite alternate none;
     }
 
     @keyframes arrowmove {
         from {
-          transform: translateY(0%);
+            transform: translateY(0%);
         }
-      
+
         to {
-          transform: translateY(70%);
+            transform: translateY(50%);
         }
-      }
+    }
+
+    &__cloud {
+        opacity: 0;
+    }
 }
 
 .header {
@@ -133,7 +138,27 @@
             left: 50%;
         }
     }
+
+    &--open {
+        .burger-menu__item:nth-of-type(1) {
+            width: 0;
+        }
+
+        .burger-menu__item:nth-of-type(2) {
+            top: 50%;
+            transform: translate(-50%, 0%) rotate(45deg);
+            left: 50%;
+        }
+
+        .burger-menu__item:nth-of-type(3) {
+            top: 50%;
+            transform: translate(-50%, 0%) rotate(-45deg);
+            left: 50%;
+        }
+    }
 }
+
+
 
 .menu {
     position: relative;
@@ -153,7 +178,7 @@
 
 
         &--open {
-            clip-path: circle(1200px at 90% -20%);
+            clip-path: circle(max(100vh, 100vw) at 70% 30%);
             pointer-events: all;
         }
     }
@@ -163,12 +188,11 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        height: 100%;
         gap: 40px;
         text-align: center;
-        height: 100%;
         margin: 0;
     }
-
 
 
     &__item {
@@ -617,7 +641,7 @@
         &:checked+.form__checkbox-style::before {
             content: "";
             position: absolute;
-            background-image: url("../images/check.svg");
+            background-image: url("../images/chek.svg");
             background-repeat: no-repeat;
             background-size: cover;
             background-position: center;

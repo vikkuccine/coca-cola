@@ -4,6 +4,25 @@
     }
 }
 
+@media (min-width: 600px) {
+    .menu {
+        &__wrap {
+            &--open {
+                clip-path: circle(80vw at 90% 8%);
+            }
+        }
+
+        &__list {
+            position: absolute;
+            top: 15vw;
+            right: 30vw;
+            height: auto;
+        }
+    }
+
+
+}
+
 @media (min-width: 700px) {
     .first-screen__btn {
         margin: 0;
@@ -25,15 +44,34 @@
             z-index: 30;
             margin: 0 0 15px 0;
             gap: 35px;
-            margin-left: 100px;
+            margin-left: auto;
         }
 
         &__item {
+            overflow: hidden;
+            height: 34px;
+
+
+            &:hover {
+                .header__link {
+                    transform: translateY(-50%);
+                }
+            }
         }
 
         &__link {
-            color: white;
             cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            transition: all .5s;
+
+            &--white {
+                color: white;
+            }
+
+            &--red {
+                color: red;
+            }
         }
     }
 }
@@ -110,6 +148,56 @@
     .first-screen::before {
         right: -432px;
     }
+
+    .first-screen__body {
+        margin-left: 99px;
+    }
+
+    .header {
+        &__list {
+            margin-right: 100px;
+        }
+    }
+
+    .cloud {
+        position: relative;
+        bottom: 135px;
+        left: 298px;
+        animation: cloud-appear 1s ease-in-out 2s 1 forwards;
+        z-index: 30;
+
+        &__photo {}
+
+        &__img {}
+
+        &__text {
+            color: #000;
+            font-family: Risque;
+            font-size: 18px;
+            font-weight: 400;
+            position: absolute;
+            top: 40px;
+            left: 40px;
+        }
+    }
+
+
+    @keyframes cloud-appear {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+
+}
+
+@media (min-width: 1300px) {
+    .cloud {
+        left: 340px;
+    }
 }
 
 @media (min-width: 1340px) {
@@ -117,7 +205,7 @@
         clip-path: circle(0px at calc(((100vw - 1329px) / 2) + 1286px) 50px);
 
         &--open {
-            clip-path: circle(1200px at 90% -20%);
+            clip-path: circle(877px at 90% 8%);
         }
     }
 }
