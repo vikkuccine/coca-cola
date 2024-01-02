@@ -59,16 +59,29 @@
 
     &__arrow {
         display: none;
+        animation: arrowmove 4s linear none infinite alternate none;
     }
+
+    @keyframes arrowmove {
+        from {
+          transform: translateY(0%);
+        }
+      
+        to {
+          transform: translateY(70%);
+        }
+      }
 }
 
 .header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 40;
+    // position: fixed;
+    // top: 0;
+    // left: 0;
+    // right: 0;
+    // z-index: 40;
     height: 90px;
+    // background: #141429;
+
 
     &__wrap {
         display: flex;
@@ -389,7 +402,7 @@
     min-height: 100vh;
     display: flex;
     align-items: center;
-    // scroll-snap-align: start;
+    scroll-snap-align: start;
 
     &::before {
         content: '';
@@ -504,7 +517,7 @@
     min-height: 100vh;
     display: flex;
     align-items: center;
-    // scroll-snap-align: start;
+    scroll-snap-align: start;
 
     &::before {
         content: '';

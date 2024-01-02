@@ -19,7 +19,6 @@
 
 @media (min-width: 900px) {
     .header {
-
         &__list {
             display: flex;
             position: relative;
@@ -29,7 +28,8 @@
             margin-left: 100px;
         }
 
-        &__item {}
+        &__item {
+        }
 
         &__link {
             color: white;
@@ -45,11 +45,18 @@
 }
 
 @media (min-width: 1000px) {
-    .first-screen__title {
-        padding-top: 30vh;
+    .first-screen {
+        &__title {
+            padding-top: 30vh;
+        }
+
+        &__arrow {
+            display: block;
+            position: absolute;
+            bottom: 30px;
+        }
     }
 }
-
 
 @media (min-width: 1060px) {
     .presents__inner {
@@ -66,7 +73,7 @@
         display: flex;
         gap: 32px;
         border-radius: 20px;
-        border: 3px solid #FFF;
+        border: 3px solid #fff;
         box-sizing: border-box;
         height: max-content;
         padding: 58px 36px 35px 35px;
@@ -75,7 +82,6 @@
 
     .presents__photo {
         order: 2;
-
     }
 
     .presents__subtitle-tub {
@@ -93,7 +99,6 @@
         justify-content: start;
     }
 }
-
 
 @media (min-width: 1100px) {
     .first-screen::before {
@@ -116,10 +121,6 @@
         }
     }
 }
-
-
-
-
 
 @media (max-width: 500px) {
     .title {
