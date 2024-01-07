@@ -1,0 +1,81 @@
+@keyframes arrowmove {
+    from {
+        transform: translateY(0%);
+    }
+
+    to {
+        transform: translateY(50%);
+    }
+}
+
+@keyframes starsSm {
+    0% {
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 0;
+    }
+
+    30% {
+        opacity: 0;
+    }
+
+    40% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: .8;
+        filter: drop-shadow(0 0 3px rgb(252, 244, 202));
+    }
+
+    60% {
+        opacity: 1;
+        filter: drop-shadow(0 0 5px rgb(245, 217, 60));
+    }
+
+    70% {
+        opacity: .7;
+        filter: drop-shadow(0 0 3px rgb(206, 201, 176));
+    }
+
+    80% {
+        opacity: .9;
+        filter: drop-shadow(0 0 3px rgb(216, 186, 18));
+    }
+
+    90% {
+        opacity: .9;
+        filter: drop-shadow(0 0 3px rgb(255, 255, 255));
+    }
+
+    100% {
+        opacity: 1;
+        filter: drop-shadow(0 0 5px rgb(235, 235, 235));
+    }
+}
+
+@keyframes cloud-appear {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes snowflake-rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}

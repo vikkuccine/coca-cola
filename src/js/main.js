@@ -2,19 +2,24 @@ generateSnow();
 showSnow(true);
 
 
-const burgerMenu = document.querySelector('.burger-menu');
+const burgerMenu = document.querySelectorAll('.burger-menu');
 const menu = document.querySelector('.menu__wrap');
 const menuItem = document.querySelectorAll('.menu__item');
 const body = document.body
 
-burgerMenu.addEventListener('click', () => {
-    menu.classList.toggle('menu__wrap--open')
-    burgerMenu.classList.toggle('burger-menu--open')
-    menuItem.forEach(item => {
-        item.classList.toggle('menu__item--fade')
+burgerMenu.forEach((item) => {
+    item.addEventListener('click', (event) => {
+        const itemTarget = event.currentTarget
+        const currentMenu = event.currentTarget.nextElementSibling
+        currentMenu.classList.toggle('menu__wrap--open')
+        itemTarget.classList.toggle('burger-menu--open')
+        menuItem.forEach(item => {
+            item.classList.toggle('menu__item--fade')
+        })
+        body.classList.toggle('overflow-hidden')
     })
-    body.classList.toggle('overflow-hidden')
 })
+
 
 
 
@@ -60,24 +65,19 @@ document.addEventListener('DOMContentLoaded', function () {
 })
 
 
-document.addEventListener("DOMContentLoaded", function () {
-	var scrollLinks = document.querySelectorAll('.scroll-item');
-  
-	scrollLinks.forEach(function (scrollLink) {
-	  scrollLink.addEventListener('click', function (e) {
-		e.preventDefault();
-  
-		var targetId = this.getAttribute('id');
-		var targetElement = document.getElementById(targetId);
-  
-		if (targetElement) {
-		  var offset = targetElement.offsetTop;
-  
-		  window.scrollTo({
-			top: offset,
-			behavior: 'smooth'
-		  });
-		}
-	  });
-	});
-  });
+const snowflakeBlock = document.querySelector('.snowflake-block')
+const secondScreen = document.querySelector('.presents')
+
+const observer = new IntersectionObserver(handleIntersection, { threshold: 0.4 });
+
+observer.observe(secondScreen);
+
+function handleIntersection(entries) {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            snowflakeBlock.style.bottom = '-315px';
+        } else {
+            snowflakeBlock.style.bottom = '20px';
+        }
+    });
+}

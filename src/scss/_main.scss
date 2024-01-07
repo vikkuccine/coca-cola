@@ -8,7 +8,8 @@
     min-height: 100vh;
     position: relative;
     scroll-snap-align: start;
-
+    height: 100%;
+    
 
     &::before {
         content: '';
@@ -26,6 +27,12 @@
 
     &__body {
         margin-top: -90px;
+        position: relative;
+    }
+
+    &__text-block {
+        position: relative;
+        z-index: 30;
     }
 
     &__title {
@@ -63,36 +70,21 @@
         animation: arrowmove 1s linear 0s infinite alternate none;
     }
 
-    @keyframes arrowmove {
-        from {
-            transform: translateY(0%);
-        }
-
-        to {
-            transform: translateY(50%);
-        }
-    }
-
     &__cloud {
         opacity: 0;
     }
 }
 
 .header {
-    // position: fixed;
-    // top: 0;
-    // left: 0;
-    // right: 0;
-    // z-index: 40;
     height: 90px;
-    // background: #141429;
-
 
     &__wrap {
         display: flex;
         align-items: end;
         justify-content: space-between;
         gap: 15px;
+        position: relative;
+        z-index: 40;
     }
 
     &__logo {
@@ -368,65 +360,19 @@
     }
 }
 
-@keyframes starsSm {
-    0% {
-        opacity: 0;
-    }
-
-    10% {
-        opacity: 0;
-    }
-
-    20% {
-        opacity: 0;
-    }
-
-    30% {
-        opacity: 0;
-    }
-
-    40% {
-        opacity: 1;
-    }
-
-    50% {
-        opacity: .8;
-        filter: drop-shadow(0 0 3px rgb(252, 244, 202));
-    }
-
-    60% {
-        opacity: 1;
-        filter: drop-shadow(0 0 5px rgb(245, 217, 60));
-    }
-
-    70% {
-        opacity: .7;
-        filter: drop-shadow(0 0 3px rgb(206, 201, 176));
-    }
-
-    80% {
-        opacity: .9;
-        filter: drop-shadow(0 0 3px rgb(216, 186, 18));
-    }
-
-    90% {
-        opacity: .9;
-        filter: drop-shadow(0 0 3px rgb(255, 255, 255));
-    }
-
-    100% {
-        opacity: 1;
-        filter: drop-shadow(0 0 5px rgb(235, 235, 235));
-    }
-}
 
 .presents {
     position: relative;
-    padding: 80px 0;
+    padding: 60px 0;
     min-height: 100vh;
     display: flex;
     align-items: center;
     scroll-snap-align: start;
+
+
+    &__header {
+        display: none;
+    }
 
     &::before {
         content: '';
@@ -535,13 +481,18 @@
 
 
 
-.form-blok {
+.form-block {
     position: relative;
     padding-bottom: 40px;
     min-height: 100vh;
     display: flex;
     align-items: center;
     scroll-snap-align: start;
+    flex-direction: column;
+
+    &__header {
+        display: none;
+    }
 
     &::before {
         content: '';
@@ -559,7 +510,7 @@
 
     &__title {
         margin: 0;
-        padding: 133px 0 24px 0;
+        padding: 82px 0 24px 0;
     }
 
     &__form {
@@ -641,7 +592,7 @@
         &:checked+.form__checkbox-style::before {
             content: "";
             position: absolute;
-            background-image: url("../images/chek.svg");
+            background-image: url("../images/check.svg");
             background-repeat: no-repeat;
             background-size: cover;
             background-position: center;
@@ -664,7 +615,6 @@
             transform: translate(-50%, -50%);
             border-radius: 2px;
         }
-
     }
 
     &__checkbox-style {

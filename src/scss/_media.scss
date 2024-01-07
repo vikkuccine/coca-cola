@@ -1,5 +1,5 @@
 @media (min-width: 540px) {
-    .form-blok__btn {
+    .form-block__btn {
         display: inline-block;
     }
 }
@@ -19,8 +19,6 @@
             height: auto;
         }
     }
-
-
 }
 
 @media (min-width: 700px) {
@@ -97,10 +95,36 @@
 }
 
 @media (min-width: 1060px) {
-    .presents__inner {
-        display: flex;
-        gap: 30px;
+    .main {
+        scroll-snap-type: y mandatory;
+        overflow-y: scroll;
+        overflow-x: clip;
+        height: 100vh;
     }
+
+    .presents {
+        padding: 0;
+
+        &__header {
+            display: block;
+            margin-bottom: 40px;
+        }
+
+        &__inner {
+            display: flex;
+            gap: 30px;
+            margin: auto 0;
+        }
+
+        &__flex-wrap {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            min-height: 100vh;
+        }
+    }
+
+
 
     .presents__swiper-box {
         min-width: 0;
@@ -135,6 +159,12 @@
 
     .presents-list {
         justify-content: start;
+    }
+
+    .form-block {
+        &__header {
+            display: block;
+        }
     }
 }
 
@@ -182,16 +212,21 @@
     }
 
 
-    @keyframes cloud-appear {
-        from {
-            opacity: 0;
-        }
 
-        to {
-            opacity: 1;
+
+    .snowflake-block {
+        display: block;
+        position: absolute;
+        bottom: 20px;
+        left: -225px;
+        z-index: 20;
+        transition: bottom 2s ease;
+
+        &__img {
+            max-width: 448px;
+            animation: snowflake-rotate 30s linear 0s infinite none;
         }
     }
-
 }
 
 @media (min-width: 1300px) {
@@ -215,13 +250,13 @@
         font-size: 40px;
     }
 
-    .form-blok__title {
+    .form-block__title {
         padding: 60px 0 24px 0;
     }
 
-    .presents {
-        padding: 60px 0;
-    }
+    // .presents {
+    //     padding: 60px 0;
+    // }
 
     .presents__texts {
         margin: 0 0 34px 0;
