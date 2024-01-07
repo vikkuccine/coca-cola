@@ -1,27 +1,62 @@
+
 generateSnow();
 showSnow(true);
 
 
-const burgerMenu = document.querySelectorAll('.burger-menu');
-const menu = document.querySelector('.menu__wrap');
-const menuItem = document.querySelectorAll('.menu__item');
-const body = document.body
 
-burgerMenu.forEach((item) => {
-    item.addEventListener('click', (event) => {
-        const itemTarget = event.currentTarget
-        const currentMenu = event.currentTarget.nextElementSibling
-        currentMenu.classList.toggle('menu__wrap--open')
-        itemTarget.classList.toggle('burger-menu--open')
-        menuItem.forEach(item => {
-            item.classList.toggle('menu__item--fade')
+class BurgerMenu {
+    constructor() {
+        this.burgerMenu = document.querySelectorAll('.burger-menu');
+        this.menu = document.querySelector('.menu__wrap');
+        this.menuItem = document.querySelectorAll('.menu__item');
+        this.body = document.body;
+        this.openBurgerMenu();
+    }
+    openBurgerMenu() {
+        this.burgerMenu.forEach((item) => {
+            item.addEventListener('click', (event) => {
+                const itemTarget = event.currentTarget
+                const currentMenu = event.currentTarget.nextElementSibling
+                currentMenu.classList.toggle('menu__wrap--open')
+                itemTarget.classList.toggle('burger-menu--open')
+                this.menuItem.forEach(item => {
+                    item.classList.toggle('menu__item--fade')
+                })
+                this.body.classList.toggle('overflow-hidden')
+            })
         })
-        body.classList.toggle('overflow-hidden')
-    })
-})
+    }
+}
 
 
 
+class AnimatedSnowflake {
+    constructor() {
+        this.snowflakeBlock = document.querySelector('.snowflake-block')
+        this.secondScreen = document.querySelector('.presents')
+        console.log(this.snowflakeBlock);
+        this.observer = new IntersectionObserver(this.handleIntersection.bind(this), { threshold: 0.4 });
+        this.observerScreen(); 
+    }
+
+    observerScreen() {
+        this.observer.observe(this.secondScreen);
+    }
+
+    handleIntersection = (entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                this.snowflakeBlock.style.bottom = '-315px';
+            } else {
+                this.snowflakeBlock.style.bottom = '20px';
+            }
+        });
+    }
+}
+
+
+const burgerMenu = new BurgerMenu();
+const animatedSnowflake = new AnimatedSnowflake();
 
 const clientsSwiper = new Swiper('.presents__swiper', {
     slidesPerView: 'auto',
@@ -65,19 +100,3 @@ document.addEventListener('DOMContentLoaded', function () {
 })
 
 
-const snowflakeBlock = document.querySelector('.snowflake-block')
-const secondScreen = document.querySelector('.presents')
-
-const observer = new IntersectionObserver(handleIntersection, { threshold: 0.4 });
-
-observer.observe(secondScreen);
-
-function handleIntersection(entries) {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            snowflakeBlock.style.bottom = '-315px';
-        } else {
-            snowflakeBlock.style.bottom = '20px';
-        }
-    });
-}

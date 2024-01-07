@@ -1,0 +1,135 @@
+.stars {
+
+    &__bg {}
+
+    &__bg-item {
+        opacity: 0;
+
+        img {
+            filter: drop-shadow(0 0 3px gold);
+        }
+
+        &:nth-child(1) {
+            position: absolute;
+            top: 20%;
+            right: 53%;
+            animation: starsSm 5s linear 0s infinite alternate;
+        }
+
+        &:nth-child(2) {
+            position: absolute;
+            top: 35%;
+            left: 30%;
+            animation: starsSm 5s linear 2s infinite alternate;
+        }
+
+        &:nth-child(3) {
+            position: absolute;
+            top: 63%;
+            left: 84%;
+            animation: starsSm 5s linear 2s infinite alternate;
+        }
+
+        &:nth-child(4) {
+            position: absolute;
+            top: 50%;
+            right: 30%;
+            animation: starsSm 5s linear 4s infinite alternate;
+        }
+
+        &:nth-child(5) {
+            position: absolute;
+            top: 41%;
+            left: 90%;
+            animation: starsSm 5s linear 4s infinite alternate;
+        }
+
+        &:nth-child(6) {
+            position: absolute;
+            top: 75%;
+            left: 30%;
+            animation: starsSm 5s linear 0s infinite alternate;
+        }
+
+        &:nth-child(7) {
+            position: absolute;
+            top: 55%;
+            left: 20%;
+            animation: starsSm 5s linear 0s infinite alternate;
+        }
+    }
+
+    &__sm {}
+
+    &__sm-item {
+        opacity: 0;
+
+        img {
+            filter: drop-shadow(0 0 3px gold);
+        }
+
+        &:nth-child(1) {
+            position: absolute;
+            top: 10%;
+            left: 30%;
+            animation: starsSm 8s linear 1s infinite alternate;
+        }
+
+        &:nth-child(2) {
+            position: absolute;
+            top: 15%;
+            left: 60%;
+            animation: starsSm 8s linear 3s infinite alternate;
+        }
+
+        &:nth-child(3) {
+            position: absolute;
+            top: 60%;
+            left: 40%;
+            animation: starsSm 8s linear 1s infinite alternate;
+        }
+
+        &:nth-child(4) {
+            position: absolute;
+            top: 20%;
+            left: 80%;
+            animation: starsSm 8s linear 3s infinite alternate;
+        }
+
+        &:nth-child(5) {
+            position: absolute;
+            top: 50%;
+            left: 40%;
+            animation: starsSm 8s linear 3s infinite alternate;
+        }
+
+        &:nth-child(6) {
+            position: absolute;
+            top: 68%;
+            left: 60%;
+            animation: starsSm 8s linear 1s infinite alternate;
+        }
+
+        &:nth-child(7) {
+            position: absolute;
+            top: 30%;
+            left: 10%;
+            animation: starsSm 8s linear 4s infinite alternate;
+        }
+
+        &:nth-child(8) {
+            position: absolute;
+            top: 38%;
+            left: 20%;
+            animation: starsSm 8s linear 0s infinite alternate;
+        }
+
+        &:nth-child(9) {
+            position: absolute;
+            bottom: 30%;
+            left: 10%;
+            animation: starsSm 8s linear 0s infinite alternate;
+        }
+
+    }
+}
