@@ -2,8 +2,6 @@
 generateSnow();
 showSnow(true);
 
-
-
 class BurgerMenu {
     constructor() {
         this.burgerMenu = document.querySelectorAll('.burger-menu');
@@ -34,7 +32,6 @@ class AnimatedSnowflake {
     constructor() {
         this.snowflakeBlock = document.querySelector('.snowflake-block')
         this.secondScreen = document.querySelector('.presents')
-        console.log(this.snowflakeBlock);
         this.observer = new IntersectionObserver(this.handleIntersection.bind(this), { threshold: 0.4 });
         this.observerScreen(); 
     }

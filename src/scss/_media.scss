@@ -151,11 +151,6 @@
         margin: 0 0 29px 0;
     }
 
-    .presents {
-        &::before {
-            // background-size: 110%;
-        }
-    }
 
     .presents-list {
         justify-content: start;
@@ -165,6 +160,10 @@
         &__header {
             display: block;
         }
+    }
+
+    .form-block {
+        min-height: 100vh;
     }
 }
 

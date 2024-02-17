@@ -352,7 +352,7 @@
 .form-block {
     position: relative;
     padding-bottom: 40px;
-    min-height: 100vh;
+    min-height: auto;
     display: flex;
     align-items: center;
     scroll-snap-align: start;
