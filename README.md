@@ -12,8 +12,8 @@ Libraries:
 - Choices.js
 - Pure-snow.js
 
-[**Demo**](https://vikkuccine.saenq.space/coca-cola/)
+[**Demo**](https://vikario.space/coca-cola/)
 
 <p align='center'>
-    <img src='https://vikkuccine.saenq.space/coca-cola/preview.jpg' width='100%'>
+    <img src='https://vikario.space/coca-cola/preview.jpg' width='100%'>
 </p>
